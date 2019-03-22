@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <div id="keat" class="keat">
+        <div id="left" class="left"></div>
+        <div id="right" class="right"></div>
+    </div>
      <div class="crop">
         <div id="parent" sZoom sCropZoom [sZoomCanPanFn]="canPanFn" [sZoomSetFrameDimensionFn]="setFrameDimensionFn"
             [sZoomFirstLoadToCenterFn]="firstLoadToCenterFn" [sZoomMinScaleFn]="minScaleFn" [sZoomMaxScaleFn]="maxScaleFn"
@@ -30,7 +34,7 @@
 let canFan = true;
 document.querySelectorAll('#parent span').forEach((elem)=>{
     const child = new Hammer(elem);
-    child.on('panstart',(e)=>{
+    child.on('tap',(e)=>{
         console.log(e.target);
     })
     // child.on('panend',(e)=>{
@@ -39,7 +43,7 @@ document.querySelectorAll('#parent span').forEach((elem)=>{
 })
 
 const parent = new Hammer(document.getElementById('parent'));
-parent.on('panstart',(e)=>{
+parent.on('tap',(e)=>{
     console.log(e.target);
 })
   </script>
