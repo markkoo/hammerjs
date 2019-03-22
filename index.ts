@@ -1,28 +1,23 @@
 import './style.scss';
+import 'hammerjs';
 
-// let canFan = true;
-// document.querySelectorAll('#parent span').forEach((elem)=>{
-//     const child = new Hammer(elem);
-//     child.on('panstart',(e:any)=>{
-//         const isFrameAround = event.target.hasAttribute('data-frame-around');
-//         if(isFrameAround) {
-//             console.log(e.target);
-//         }
-//         canFan = !isFrameAround;
-//     })
-//     child.on('panend',(e)=>{
-//         canFan = true;
-//     })
-// })
+document.querySelectorAll<HTMLElement>('#parent span').forEach((elem) => {
+    const child = new Hammer(elem);
+    child.on('panstart', (e) => {
+        console.log('child', e.target);
+    });
+});
 
-// const parent = new Hammer(document.getElementById('parent'));
-// parent.on('panstart',(e:any)=>{
-//     if(canFan){
-//         console.log('parent')
-//     }
-// })
+const parent = new Hammer(document.getElementById('parent'));
+parent.on('panstart', (e) => {
+    console.log('parent', e.target);
+});
 
+const left = new Hammer(document.getElementById('left'));
+left.on('panstart', (e: HammerInput) => console.log(e.target));
 
+const right = new Hammer(document.getElementById('right'));
+right.on('panstart', (e: HammerInput) => console.log(e.target));
 
 
 
