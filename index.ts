@@ -19,5 +19,9 @@ left.on('panstart', (e: HammerInput) => console.log(e.target));
 const right = new Hammer(document.getElementById('right'));
 right.on('panstart', (e: HammerInput) => console.log(e.target));
 
+const keat = new Hammer(document.getElementById('keat'));
+keat.on('panstart', (e: HammerInput) => console.log(e.target));
+
+
 
 
