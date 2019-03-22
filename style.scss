@@ -2,6 +2,22 @@ $lineSize: 24px;
 *{
     box-sizing: border-box;
 }
+.keat{
+  border:1px solid red;
+  width: 400px;
+  height:400px;
+  .left{
+    border-right:1px solid;
+    width:50%;
+    height: 100%;
+  }
+  .right{
+    width:50%;
+    height: 100%;
+  }
+}
+
+
 .crop {
     width: 400px;
     height: 400px;
