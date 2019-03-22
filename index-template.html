@@ -31,22 +31,16 @@ let canFan = true;
 document.querySelectorAll('#parent span').forEach((elem)=>{
     const child = new Hammer(elem);
     child.on('panstart',(e)=>{
-        const isFrameAround = event.target.hasAttribute('data-frame-around');
-        if(isFrameAround) {
-            console.log(e.target);
-        }
-        canFan = !isFrameAround;
+        console.log(e.target);
     })
-    child.on('panend',(e)=>{
-        canFan = true;
-    })
+    // child.on('panend',(e)=>{
+    //     canFan = true;
+    // })
 })
 
 const parent = new Hammer(document.getElementById('parent'));
 parent.on('panstart',(e)=>{
-    if(canFan){
-        console.log('parent')
-    }
+    console.log(e.target);
 })
   </script>
 </body>
